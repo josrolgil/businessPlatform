@@ -1,0 +1,45 @@
+{% extends 'adminlte/base.html' %}
+
+{% block title %}B P{% endblock %}
+{% block content %}
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title"> Clients </h3>
+        <a href="/clients/new">
+            <button type="button" class="btn btn-primary" style="float: right;">Add new client</button>
+        </a>
+    </div>
+    <div class="box-body no-padding">
+        <table class="table table-striped">
+            <tbody>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>City</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% if clients %}
+            {% for client in clients %}
+            <tr>
+                <td width="5%"><a href="/clients/edit/{{ client.id }}">
+                    <button type="button" class="btn btn-block btn-primary">{{ client.id }}</button>
+                </a></td>
+                <td width="25%">{{ client.name }}</td>
+                <td width="25%">{{ client.lastname }}</td>
+                <td width="25%">{{ client.city }}</td>
+                <td width="10%"><a href="/clients/delete/{{ client.id }}">
+                    <button type="button" class="btn btn-danger btn-block">Delete</button>
+                </a></td>
+                <td width="10%"><a href="/clients/detail/{{ client.id }}">
+                    <button type="button" class="btn btn-info btn-block">Info</button>
+                </a></td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'adminlte/base.html' %}
+{% load fontawesome %}
+<head>
+    {% fontawesome_stylesheet %}
+</head>
+{% block title %}B P{% endblock %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+                <span class="info-box-icon bg-aqua">
+                    <i>{% fontawesome_icon 'cogs' large=True %}</i>
+                </span>
+            <div class="info-box-content">
+                <span class="info-box-text">CPU Traffic</span>
+                <span class="info-box-number">"90"<small>%</small></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+                <span class="info-box-icon bg-red">
+                    <i class="fa fa-google-plus"></i>
+                </span>
+            <div class="info-box-content">
+                <span class="info-box-text">CPU Traffic</span>
+                <span class="info-box-number">"90"<small>%</small></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+                <span class="info-box-icon bg-green">
+                    <i>{% fontawesome_icon 'shopping-cart' large=True %}</i>
+                </span>
+            <div class="info-box-content">
+                <span class="info-box-text">CPU Traffic</span>
+                <span class="info-box-number">"90"<small>%</small></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+                <span class="info-box-icon bg-yellow">
+                    <i>{% fontawesome_icon 'users' large=True %}</i>
+                </span>
+            <div class="info-box-content">
+                <span class="info-box-text">CPU Traffic</span>
+                <span class="info-box-number">"90"<small>%</small></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div>
+        <label class="col-sm-2 control-label">Name</label>
+        <p>{{ client.name }}</p>
+    </div>
+    <div>
+        <label class="col-sm-2 control-label">Lastname</label>
+        <p>{{client.lastname}}</p>
+    </div>
+    <div>
+        <label class="col-sm-2 control-label">Address</label>
+        <p>{{client.address}}</p>
+    </div>
+    <div>
+        <label class="col-sm-2 control-label">City</label>
+        <p>{{client.city}}</p>
+    </div>
+</div>
+
+
+{% endblock %}

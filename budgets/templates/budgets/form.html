@@ -1,0 +1,40 @@
+{% extends 'adminlte/base.html' %}
+{% load fontawesome %}
+<head>
+    {% fontawesome_stylesheet %}
+</head>
+{% block title %}B P{% endblock %}
+{% block content %}
+
+<div class="box-header with-border">
+    <form class="form-horizontal" method="post">{% csrf_token %}
+        <div class="box-body">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Client</label>
+                <div class="dropdown col-sm-10">
+                    <div class="form-group">
+                        <select class="form-control">
+                            {% for client in clients %}
+                            <option>{{client.name}} {{client.lastname}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="{% url 'clients:index' %}">
+                    <button type="button" class="btn btn-block btn-primary">Back</button>
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-block btn-primary" name="saveClient" value="saveClient">Save
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
