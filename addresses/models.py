@@ -1,10 +1,14 @@
 from django.db import models
-from django.forms import ModelForm
+from django import forms
 # Create your models here.
+from django.forms import ModelForm
+
 from clients.models import Client
 
 
 class Address(models.Model):
+    #ModelChoiceField
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
     street = models.CharField(max_length=1000)
     number = models.IntegerField()
     building = models.CharField(max_length=100)
@@ -31,3 +35,8 @@ class LoadAddress(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     license = models.BooleanField()
     license_type = models.CharField(max_length=400)
+
+class AddressForm(ModelForm):
+    class Meta:
+        model = Address
+        fields = '__all__'

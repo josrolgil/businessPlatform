@@ -1,0 +1,26 @@
+{% extends 'adminlte/base.html' %}
+{% load fontawesome %}
+<head>
+    {% fontawesome_stylesheet %}
+</head>
+{% block title %}B P{% endblock %}
+{% block content %}
+<div class="container">
+    <form method="post">{% csrf_token %}
+        <div class="callout callout-danger">
+        <div class="row">
+            <div class="col-sm-10">
+                    <h4>Delete address?</h4>
+                    <h4>{{object.client.name}} {{object.client.lastname}}</h4>
+                    <h4>{{object.street}} {{object.city}}</h4>
+                    <p>Are you sure you want to delete it?</p>
+            </div>
+            <div class="col-sm-2">
+                 <input type="submit" value="Submit" class="btn btn-block btn-default"/>
+            </div>
+        </div>
+        </div>
+    </form>
+
+</div>
+{% endblock %}
