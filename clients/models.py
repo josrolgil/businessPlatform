@@ -7,7 +7,8 @@ from django.forms import ModelForm
 class Client(models.Model):
     name = models.CharField(max_length=200)
     lastname = models.CharField(max_length=400)
-    address = models.CharField(max_length=400)
+    email = models.EmailField()
+    phone = models.IntegerField()
     city = models.CharField(max_length=200)
 
     def __str__(self):

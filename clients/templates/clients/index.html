@@ -16,6 +16,8 @@
                 <th>#</th>
                 <th>Name</th>
                 <th>Lastname</th>
+                <th>Email</th>
+                <th>Phone</th>
                 <th>City</th>
                 <th></th>
                 <th></th>
@@ -26,9 +28,11 @@
                 <td width="5%"><a href="/clients/edit/{{ client.id }}">
                     <button type="button" class="btn btn-block btn-primary">{{ client.id }}</button>
                 </a></td>
-                <td width="25%">{{ client.name }}</td>
-                <td width="25%">{{ client.lastname }}</td>
-                <td width="25%">{{ client.city }}</td>
+                <td width="20%">{{ client.name }}</td>
+                <td width="20%">{{ client.lastname }}</td>
+                <td width="15%">{{ client.email }}</td>
+                <td width="10%">{{ client.phone }}</td>
+                <td width="10%">{{ client.city }}</td>
                 <td width="10%"><a href="/clients/delete/{{ client.id }}">
                     <button type="button" class="btn btn-danger btn-block">Delete</button>
                 </a></td>
