@@ -6,6 +6,7 @@ from .models import Address, DownloadAddress, LoadAddress, AddressForm
 
 # Create your views here.
 def index(request):
+
     addresses = Address.objects.order_by('id')
     context = {'addresses': addresses}
     return render(request, 'addresses/index.html', context)
