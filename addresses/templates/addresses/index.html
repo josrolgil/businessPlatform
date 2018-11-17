@@ -1,0 +1,45 @@
+{% extends 'adminlte/base.html' %}
+
+{% block title %}B P{% endblock %}
+{% block content %}
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title"> Budgets </h3>
+        <a href="/budgets/new">
+            <button type="button" class="btn btn-primary" style="float: right;">Add new budget</button>
+        </a>
+    </div>
+    <div class="box-body no-padding">
+        <table class="table table-striped">
+            <tbody>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>City</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% if clients %}
+            {% for client in clients %}
+            <tr>
+                <td width="5%"><a href="/clients/edit/{{ client.id }}">
+                    <button type="button" class="btn btn-block btn-primary">{{ budget.id }}</button>
+                </a></td>
+                <td width="25%">{{ budget.client.name }}</td>
+                <td width="25%"></td>
+                <td width="25%"></td>
+                <td width="10%"><a href="/budgets/delete/{{ budget.id }}">
+                    <button type="button" class="btn btn-danger btn-block">Delete</button>
+                </a></td>
+                <td width="10%"><a href="/budgets/detail/{{ budget.id }}">
+                    <button type="button" class="btn btn-info btn-block">Info</button>
+                </a></td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
