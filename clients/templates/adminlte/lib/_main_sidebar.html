@@ -11,4 +11,19 @@
             <i class="fa fa-user"></i> <span>Clients</span>
         </a>
     </li>
+    <li>
+        <a href="{% url 'addresses:index' %}">
+            <i class="fa fa-map-pin"></i> <span>Addresses</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'dashboard:index' %}">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'budgets:index' %}">
+            <i class="fa fa-file-text"></i> <span>Budgets</span>
+        </a>
+    </li>
 {% endblock nav_links %}

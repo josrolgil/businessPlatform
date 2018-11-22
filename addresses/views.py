@@ -6,10 +6,13 @@ from .models import Address, DownloadAddress, LoadAddress, AddressForm
 
 # Create your views here.
 def index(request):
-
     addresses = Address.objects.order_by('id')
     context = {'addresses': addresses}
     return render(request, 'addresses/index.html', context)
+
+def detail_address(request, address_id):
+    address =get_object_or_404(Address, pk=address_id)
+    return render(request, 'addresses/detail.html', {'address': address})
 
 
 def new_address(request):

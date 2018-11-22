@@ -51,13 +51,13 @@
             <div class="form-group">
                 <label for="elevator" class="col-sm-2 control-label">Elevator</label>
                 <div class="col-sm-10">
-                    <input type="checkbox" class="form-check-input" id="elevator">
+                    <input type="checkbox" class="form-check-input" id="elevator" name="elevator" {%if form.elevator.value %}checked="checked" {% endif %}>
                 </div>
             </div>
             <div class="form-group">
                 <label for="terrace" class="col-sm-2 control-label">Terrace</label>
                 <div class="col-sm-10">
-                    <input type="checkbox" class="form-check-input" id="terrace">
+                    <input type="checkbox" class="form-check-input" id="terrace" name="terrace" {%if form.terrace.value %}checked="checked" {% endif %}>
                 </div>
             </div>
             <div class="form-group">
@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="door" class="col-sm-2 control-label">State</label>
+                <label for="state" class="col-sm-2 control-label">State</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="state" name="state" placeholder="State" {%if form %} value={{ form.state.value }}{% endif %}>
                 </div>
@@ -75,11 +75,11 @@
             <div class="form-group">
                 <label for="forklift" class="col-sm-2 control-label">Forklift</label>
                 <div class="col-sm-10">
-                    <input type="checkbox" class="form-check-input" id="forklift">
+                    <input type="checkbox" class="form-check-input" name="forklift" id ="forklift" {%if form.forklift.value %}checked="checked" {% endif %}>
                 </div>
             </div>
             <div class="form-group">
-                <label for="door" class="col-sm-2 control-label">Forklift Type</label>
+                <label for="forklift_type" class="col-sm-2 control-label">Forklift Type</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="forklift_type" name="forklift_type" placeholder="Forklift Type" {%if form %} value={{ form.forklift_type.value }}{% endif %}>
                 </div>
