@@ -20,22 +20,6 @@ class Address(models.Model):
     forklift = models.BooleanField()
     forklift_type = models.CharField(max_length=200)
 
-class DownloadAddress(models.Model):
-    address1 = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='%(class)s_first_address')
-    address2 = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='%(class)s_second_address') #todo: list?
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    license = models.BooleanField()
-    license_type = models.CharField(max_length=400)
-    moving_date = models.DateField()
-    visiting_date = models.DateField()
-    confirmation = models.CharField(max_length=200)
-
-class LoadAddress(models.Model):
-    address = models.ForeignKey(Address, on_delete=models.CASCADE)
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    license = models.BooleanField()
-    license_type = models.CharField(max_length=400)
-
 class AddressForm(ModelForm):
     class Meta:
         model = Address

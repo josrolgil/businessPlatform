@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from clients.models import Client
-from .models import Address, DownloadAddress, LoadAddress, AddressForm
+from .models import Address, AddressForm
 
 
 # Create your views here.
