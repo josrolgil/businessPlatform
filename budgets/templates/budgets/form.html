@@ -18,7 +18,7 @@
                 <label class="col-sm-2 control-label">Client</label>
                 <div class="dropdown col-sm-10">
                     <div class="form-group">
-                        <select class="form-control">
+                        <select class="form-control" id="client">
                             {% for client in clients %}
                             <option value="{{client.id}}">{{client.name}} {{client.lastname}}</option>
                             {% endfor %}
@@ -46,28 +46,28 @@
             <div class="form-group">
                 <label for="license" class="col-sm-2 control-label">License</label>
                 <div class="col-sm-10">
-                    <input type="checkbox" class="form-check-input" name="license" id="license" {%if form.loadAddress.license.value %}checked="checked" {% endif %}>
+                    <input type="checkbox" class="form-check-input" name="license" id="license" {%if formLoadAddress.license.value %}checked="checked" {% endif %}>
                 </div>
             </div>
             <div class="form-group">
                 <label for="license_type" class="col-sm-2 control-label">License Type</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="license_type" name="license_type"
-                           placeholder="License Type" {%if form %} value={{ form.loadAddress.license_type.value }}{% endif %}>
+                           placeholder="License Type" {%if formLoadAddress %} value={{ formLoadAddress.license_type.value }}{% endif %}>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Address</label>
-                <div class="dropdown col-sm-10">
-                    <div class="form-group">
-                        <select class="form-control">
-                            {% for address in addresses %}
-                            <option value="{{address.id}}">{{address.city}} {{address.street}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
-            </div>
+            <!--<div class="form-group">-->
+                <!--<label class="col-sm-2 control-label">Address</label>-->
+                <!--<div class="dropdown col-sm-10">-->
+                    <!--<div class="form-group">-->
+                        <!--<select class="form-control">-->
+                            <!--{% for address in addresses %}-->
+                            <!--<option value="{{address.id}}">{{address.city}} {{address.street}}</option>-->
+                            <!--{% endfor %}-->
+                        <!--</select>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
             <div class="form-group">
                 <div>
                     <label class="col-sm-2 control-label">Download Address</label>
@@ -88,14 +88,14 @@
             <div class="form-group">
                 <label for="licenseDownload1" class="col-sm-2 control-label">License</label>
                 <div class="col-sm-10">
-                    <input type="checkbox" class="form-check-input" name="licenseDownload1" id="licenseDownload1" {%if form.loadAddress.license.value %}checked="checked" {% endif %}>
+                    <input type="checkbox" class="form-check-input" name="licenseDownload1" id="licenseDownload1" {%if formDownloadAddress.license.value %}checked="checked" {% endif %}>
                 </div>
             </div>
             <div class="form-group">
                 <label for="license_type_download1" class="col-sm-2 control-label">License Type</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="license_type_download1" name="license_type_download1"
-                           placeholder="License Type" {%if form %} value={{ form.loadAddress.license_type.value }}{% endif %}>
+                           placeholder="License Type" {%if formDownloadAddress %} value={{ formDownloadAddress.license_type.value }}{% endif %}>
                 </div>
             </div>
             <div class="form-group">
@@ -113,20 +113,20 @@
                     <div class="input-group-addon">
                         <i class ="fa fa-calendar"></i>
                     </div>
-                    <input type="text" class="form-control pull-right" id="datepicker">
+                    <input type="text" class="form-control pull-right" id="datepicker2">
                 </div>
             </div>
             <div class="form-group">
                 <label for="confirmation" class="col-sm-2 control-label">Confirmation</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="confirmation" name="confirmation"
-                           placeholder="License Type" {%if form %} value={{ form.loadAddress.license_type.value }}{% endif %}>
+                           placeholder="Confirmation" {%if formDownloadAddress %} value={{ formDownloadAddress.confirmation.value }}{% endif %}>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-4">
                 <div>
-                    <button type="button" class="btn btn-block btn-primary" onclick="addSecondDownloadAddress('{{addresses|escapejs}}')">Add second download address</button>
+                    <button type="button" class="btn btn-block btn-primary" onclick="addSecondDownloadAddress('{{addresses_json|escapejs}}')">Add second download address</button>
                 </div>
                 </div>
             </div>
